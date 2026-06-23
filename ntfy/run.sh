@@ -15,14 +15,13 @@ read_option() {
 }
 BASE_URL="$(read_option base_url)"
 UPSTREAM_BASE_URL="$(read_option upstream_base_url || true)"
-LISTEN_PORT="$(read_option listen_port)"
 if [ -z "$BASE_URL" ]; then
   echo "Error: base_url is not configured" >&2
   exit 1
 fi
 cat > /share/ntfy/etc/server.yml <<YAML
 base-url: "${BASE_URL}"
-listen-http: ":${LISTEN_PORT}"
+listen-http: ":80"
 cache-file: "/share/ntfy/cache/cache.db"
 attachment-cache-dir: "/share/ntfy/cache/attachments"
 auth-file: "/share/ntfy/cache/auth.db"
