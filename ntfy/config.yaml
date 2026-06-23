@@ -1,5 +1,5 @@
 name: "ntfy"
-version: "1.0.2"
+version: "1.0.3"
 slug: "ntfy"
 description: "Self-hosted ntfy notification server"
 url: "https://docs.ntfy.sh/"
@@ -20,6 +20,8 @@ map:
     read_only: false
 options:
   base_url: "http://127.0.0.1:8080"
+  listen_port: 8080
 schema:
   base_url: url
   upstream_base_url: "url?"
+  listen_port: int
